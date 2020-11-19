@@ -32,15 +32,8 @@ function! coc_fzf#actions#fzf_run(range) abort
 endfunction
 
 function! s:format_coc_action(item) abort
-  " title [clientId] (kind)
-  let str = a:item.title .
-        \ coc_fzf#common_fzf_vim#yellow(' [' . a:item.clientId . ']', 'Type')
-  if exists('a:item.kind')
-    let str .=  coc_fzf#common_fzf_vim#green(' (' . a:item.kind . ')', 'Comment')
-  endif
-  if exists('a:item.provenance')
-    let str .=  coc_fzf#common_fzf_vim#green(' [' . a:item.provenance . ']', 'Provenance')
-  endif
+  " title
+  let str = a:item.title
   return str
 endfunction
 
